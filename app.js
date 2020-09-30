@@ -52,9 +52,13 @@ const internQuestions = [
 
 function addEmployee(role){
     if (role == "Manager"){
-        questions = []
-        questions.push(employeeQuestions)
-        questions.push(managerQuestions)
+        let questions = []
+        for (each of employeeQuestions){
+            questions.push(each)
+        }
+        for (each of managerQuestions){
+            questions.push(each)
+        }
         inquirer.prompt(questions).then((response) => {
             let id = teamList.length;
             let manager = new Manager(id, response.name, response.email, response.officeNumber);
@@ -62,9 +66,13 @@ function addEmployee(role){
             init();
         });
     } else if (role == "Engineer"){
-        questions = []
-        questions.push(employeeQuestions)
-        questions.push(engineerQuestions)
+        let questions = []
+        for (each of employeeQuestions){
+            questions.push(each)
+        }
+        for (each of engineerQuestions){
+            questions.push(each)
+        }
         inquirer.prompt(questions).then((response) => {
             let id = teamList.length;
             let engineer = new Engineer(id, response.name, response.email, response.github);
@@ -72,9 +80,13 @@ function addEmployee(role){
             init();
         });
     } else if (role == "Intern"){
-        questions = []
-        questions.push(employeeQuestions)
-        questions.push(internQuestions)
+        let questions = []
+        for (each of employeeQuestions){
+            questions.push(each)
+        }
+        for (each of internQuestions){
+            questions.push(each)
+        }
         inquirer.prompt(questions).then((response) => {
             let id = teamList.length;
             let intern = new Intern(id, response.name, response.email, response.school);
@@ -102,19 +114,21 @@ function init(){
                 }
             ]).then((response) => { 
                 addEmployee(response.memberRole)
-            })
+            });
          } else {
-            const renderTeam = render(team);
+            const renderTeam = render(teamList);
             fs.writeFile(outputPath, renderTeam, "utf8", function(err){
                 if (err) {
                     return console.log(err);
                 } else {
                     console.log(`File rendered to ${outputPath}`)
-         }
+                    };
+                });
+            };
     });
-}
+};
 
-
+init()
     
     
 // After the user has input all employees desired, call the `render` function (required
