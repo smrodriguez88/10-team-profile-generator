@@ -11,7 +11,7 @@
   Team Profile Generator is a CLI application which takes user input to generate a team.html file in the output/ folder to display a web page with your team members listed.
 
   ## Installation
-  Run "NPM Install" to install necessary packages
+  Run "npm install" to install necessary packages
   
   ## Usage
   Run "node app.js" then proceed to answer the presented questions
