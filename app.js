@@ -30,7 +30,7 @@ const managerQuestions = [
     {
         type: "input",
         message: "Enter employee office number: ",
-        name: "office",
+        name: "officeNumber",
     }
 ]
 
@@ -50,6 +50,11 @@ const internQuestions = [
     }
 ]
 
+// Add Employee takes the role as input and generates an array of questions based on that role,
+// then sets id as the length of the teamList array so the id field is auto-populated,
+// then instantiates a new variable using the specified role class using the responses provided
+// by the user, then pushes that variable to the teamList array. Once complete it kicks off the
+// init() function again to determine if another team member needs to be added.
 function addEmployee(role){
     if (role == "Manager"){
         let questions = []
@@ -95,6 +100,9 @@ function addEmployee(role){
         });
     };
 };
+
+// Init determines if the user would like to add a new team member, if yes it proceeds with questions
+// about the team member, if no it builds the HTML page based on the information provided thus far.
 function init(){
     inquirer.prompt([
         {
