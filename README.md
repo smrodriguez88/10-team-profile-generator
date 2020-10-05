@@ -1,4 +1,4 @@
-# Good README Generator
+# Team Profile Generator
   ## Table Of Contents
   * [Description](#Description)<br>
   * [Installation](#Installation)<br>
@@ -27,6 +27,6 @@
 
   ## Review
 
-  * Video Demonstration - 10-team-profile-generator - https://youtu.be/wOpXfhNFcdE
+  * Video Demonstration - 10-team-profile-generator - https://youtu.be/1kibLItUYNQ
 
   * Github Repository - 10-team-profile-generator - https://github.com/smrodriguez88/10-team-profile-generator
